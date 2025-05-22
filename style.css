@@ -1,3 +1,19 @@
+:root {
+  --primary-color: #4A90E2;
+  --secondary-color: #63B8FF;
+  --text-color: #333333;
+  --background-light: #F8F8F8;
+  --border-color: #DDDDDD;
+}
+
+body {
+  background-color: var(--background-light); /*Off-white background for the entire page */
+  color: var(--text-color); /* Dark grey for all default text */
+  margin: 0; /* Remove default body margin */
+  padding: 20px; /*Add some padding around the content */
+  line-height: 1.6; /* Improve readability of paragraph text */
+}
+
 .featured-projects {
   display: flex;
   justify-content: center;
@@ -5,13 +21,18 @@
   margin: 0 auto;
 }
 .project {
-  border: 1px solid #000;
+  border: 1px solid var(--border-color); /*Use light grey for borders */
   border-radius: 10px;
   padding: 10px;
   margin-right: 20px;
+  background-color: #fff; /* White background for project cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
 }
 h2 {
   text-align: center;
+  color: var(--primary-color); /* Apply primary color to H2s*/
+  margin-bottom: 20px; /* Add some space below headings */
 }
 
 .about-me-content {
@@ -35,15 +56,17 @@ h2 {
 }
 
 .contact-button {
-  padding: 10px 20px;
-  background-color: #007bff;
+  padding: 10px 25px;
+  background-color: var(--primary-color);
   color: white;
   text-decoration: none;
   border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 .contact-button:hover {
-  background-color: #0056b3;
+  background-color: var(--secondary-color);
 }
 .skills {
   margin-top: 30px;
@@ -66,18 +89,19 @@ h2 {
 }
 
 .skills li {
-  background-color: #f9f9f9;
-  color: #555;
+  background-color: white;
+  color: var(--text-color);
   padding: 10px 15px;
   border-radius: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   font-size: 0.9em;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .skills li:hover {
-  background-color: #eee;
-  color: #333;
-  border-color: #ccc;
+  background-color: var(--secondary-color);
+  color: white;
+  border-color: var(--secondary-color);
 }
 
 @media (max-width: 600px) {
@@ -103,3 +127,22 @@ img{
   max-width: 100%;
   height: auto;
 }
+/* Google Fonts */
+h2, h3 { /* Apply Oswald to H2 and H3 headings */
+  font-family: 'Oswald', sans-serif;
+}
+
+p, li, a { /* Apply Open Sans to paragraph, list items, and links */
+  font-family: 'Open Sans', sans-serif;
+}
+.about-me, .skills, .featured-projects {
+  background-color: white;
+  padding: 30px;
+  margin-bottom: 40px; /* Add space between sections */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Remove the br tags from your HTML, these CSS margins handle spacing now */
